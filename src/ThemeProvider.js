@@ -1,45 +1,10 @@
 import React, { Fragment } from 'react'
 import { ThemeProvider as Root, injectGlobal, css } from 'styled-components'
 import PropTypes from 'prop-types'
+import theme from './theme'
 
+const fontsCss = css`
 
-const coreColors = css`
-  $primary-color: #5755d9 !default;
-  $primary-color-dark: darken($primary-color, 3%) !default;
-  $primary-color-light: lighten($primary-color, 3%) !default;
-  $secondary-color: lighten($primary-color, 37.5%) !default;
-  $secondary-color-dark: darken($secondary-color, 3%) !default;
-  $secondary-color-light: lighten($secondary-color, 3%) !default;
-`
-
-const grayColors = css`
-  $dark-color: #454d5d !default;
-  $light-color: #fff !default;
-  $gray-color: lighten($dark-color, 40%) !default;
-  $gray-color-dark: darken($gray-color, 25%) !default;
-  $gray-color-light: lighten($gray-color, 20%) !default;
-
-  $border-color: lighten($dark-color, 60%) !default;
-  $border-color-dark: darken($border-color, 10%) !default;
-  $bg-color: lighten($dark-color, 66%) !default;
-  $bg-color-dark: darken($bg-color, 3%) !default;
-  $bg-color-light: $light-color !default;
-`
-
-const controlColors = css`
-  $success-color: #32b643 !default;
-  $warning-color: #ffb700 !default;
-  $error-color: #e85600 !default;
-`
-
-const otherColors = css`
-  $code-color: #d73e48 !default;
-  $highlight-color: #ffe9b3 !default;
-  $body-bg: $bg-color-light !default;
-  $body-font-color: lighten($dark-color, 5%) !default;
-  $link-color: $primary-color !default;
-  $link-color-dark: darken($link-color, 10%) !default;
-  $link-color-light: lighten($link-color, 10%) !default;
 `
 
 injectGlobal`
@@ -83,7 +48,7 @@ textarea {
 }
 `
 
-const ThemeProvider = ({ coreColors, webfonts, ...props }) => {
+const ThemeProvider = ({ theme, ...props }) => {
   if (webfonts) injectGlobal([], fontsCss)
   return (
     <Root

@@ -1,64 +1,90 @@
 import { css } from 'styled-system'
 
-const coreColors = css`
-  $primary-color: #5755d9 !default;
-  $primary-color-dark: darken($primary-color, 3%) !default;
-  $primary-color-light: lighten($primary-color, 3%) !default;
-  $secondary-color: lighten($primary-color, 37.5%) !default;
-  $secondary-color-dark: darken($secondary-color, 3%) !default;
-  $secondary-color-light: lighten($secondary-color, 3%) !default;
-`
-
-const red = '#e42d42'
-const blue = '#2d9ce4'
-export const palette = palx(blue)
-
-export const grays = {
-  black: palette.black,
-  slate: palette.gray[8],
-  silver: palette.gray[7],
-  smoke: palette.gray[2],
-  snow: palette.gray[0],
-  white: '#ffffff'
+const core = {
+  primary: '#5755d9',
+  primaryDark: '#4b48d6',
+  primaryLight: '#6362dc',
+  secondary: '#f1f1fc',
+  secondaryDark: '#e5e5f9',
+  secondaryLight: '#fefeff',
 }
 
-export const brand = {
-  primary: red,
-  accent: palette.indigo[4],
-  success: palette.teal[5],
-  info: palette.blue[5],
-  warning: palette.orange[5],
-  error: palette.red[7],
-  muted: grays.silver
+const gray = {
+  dark: '#454d5d',
+  light: '#fff',
+  gray: '#acb3c2',
+  grayDark: '#667189',
+  grayLight: '#e7e9ed',
+  border: '#e7e9ed',
+  borderDark: '#caced7',
+  bg: '#f8f9fa',
+  bgDark: '#f0f1f4',
+  bgLight: '#fff',
+}
+
+const control = {
+  success: '#32b643',
+  warning: '#ffb700',
+  error: '#e85600',
+}
+
+const other = {
+  code: '#d73e48 ',
+  highlight: '#ffe9b3 ',
+  bodyBg: `${gray.bgLight}`,
+  bodyFont: '#50596c',
+  link: `${core.primary}`,
+  linkDark: '#302ecd',
+  linkLight: '#807fe2',
 }
 
 export const colors = {
-  ...brand,
-  ...grays,
-  ...palette
+  ...core,
+  ...gray,
+  ...control,
+  ...other,
 }
 
+export const unit = [.05, .1, .2, .4, .6, .8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.4, 3.2]
+
+const addAliases = (arr, aliases) =>
+  aliases.forEach((key, i) =>
+    Object.defineProperty(arr, key, {
+      enumerable: false,
+      get() {
+        return this[i]
+      }
+    })
+  )
+
+const zindexAliases = ['0', '1', '2', '3', '4']
+export const zindex = [1, 100, 200, 300, 400]
+
+const breakpointsAliases = ['xs', 'sm', 'md', 'lg', 'xl', '2x']
+export const breakpoints = [480, 600, 840, 960, 1280, 1440]
+
+const constrolWidthAliases = ['xs', 'sm', 'md', 'lg', 'xl']
+export const constrolWidth = [180, 320, 640, 960, 1280]
+
+export const sizes = {
+  borderRadius: unit[1],
+  borderWidth: unit[0],
+  borderWidthLg: unit[1],
+  unit,
+}
+
+export const fontBase = '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto !default'
+export const fontMono = '"SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace !default'
+export const fontFallback = '"Helvetica Neue", sans-serif !default'
+export const bodyFont = `${fontBase}, ${fontFallback} !defaultå`
 
 const theme = {
-  breakpoints,
-  mediaQueries,
-  space,
-  mono,
-  font,
-  fontSizes,
-  fontWeights,
-  regular,
-  bold,
+  fontBase,
+  fontMono,
+  fontFallback,
+  fontBody,
   colors,
-  radii,
-  radius,
-  pill,
-  scaleFactor,
-  transition,
-  boxShadows,
-  shadowColor,
-  cx,
-  hexa
+  sizes,
 }
 
 export default theme
