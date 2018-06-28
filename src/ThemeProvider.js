@@ -3,49 +3,52 @@ import { ThemeProvider as Root, injectGlobal, css } from 'styled-components'
 import PropTypes from 'prop-types'
 import theme from './theme'
 
-const fontsCss = css`
-
-`
+const fontsCss = css``
 
 injectGlobal`
-* {
-  box-sizing: border-box;
-  font-weight: inherit;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 
-html,
-body {
-  min-height: 100%;
-  min-width: 100%;
-}
+  html {
+    box-sizing: border-box;
+    font-size: $html-font-size;
+    line-height: $html-line-height;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-body {
-  padding: 0;
-  margin: 0;
-  font-size: ${theme.fontSizes[2]}px;
-  font-family: ${theme.font};
-  line-height: 1.5;
-  position: relative;
-  height: 100%;
-  max-height: 100%;
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-}
+  body {
+    background: $body-bg;
+    color: ${theme.colors.bodyFont};
+    font-family: ${theme.bodyFont};
+    font-size: $font-size;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
 
-a {
-  color: currentColor;
-  text-decoration: none;
-}
+  a {
+    color: ${theme.colors.link};
+    outline: none;
+    text-decoration: none;
 
-textarea {
-  resize: none;
-}
+    &:focus {
+      @include control-shadow();
+    }
+
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      color: ${theme.colors.linkDark};
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: ${theme.colors.linkLight};
+    }
+  }
 `
 
 const ThemeProvider = ({ theme, ...props }) => {

@@ -3,10 +3,11 @@ import theme from './theme'
 
 const Button = styled.button`
   appearance: none;
-  background: ${props => props.theme.colors.gray.bgLight};
-  border: ${props => props.theme.sizes.borderWidth} solid ${props => props.theme.colors.core.primary};
+  background: ${props => props.theme.colors.bgLight};
+  border: ${props => props.theme.sizes.borderWidth} solid
+    ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.sizes.borderRadius};
-  color: ${props => props.theme.colors.core.primary};
+  color: ${props => props.theme.colors.primary};
   cursor: pointer;
   display: inline-block;
   outline: none;
@@ -18,87 +19,75 @@ const Button = styled.button`
   white-space: nowrap;
 
   &:focus {
-
   }
 
   &:focus,
   &:hover {
     text-decoration: none;
-    background: ${props => props.theme.colors.core.secondary};
-    border-color: ${props => props.theme.colors.core.primaryDark};
+    background: ${props => props.theme.colors.secondary};
+    border-color: ${props => props.theme.colors.primaryDark};
   }
 
-  ${props => props.primary && css`
+  ${props =>
+    props.primary &&
+    css`
+      ${props =>
+        props.loading &&
+        css`
+          &::after {
+          }
+        `};
+    `};
 
-    ${props => props.loading && css` 
-      &::after {
+  ${props => props.success && css``};
 
+  ${props => props.error && css``};
+
+  ${props =>
+    props.link &&
+    css`
+      background: transparent;
+      border-color: transparent;
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
       }
     `};
 
-  `};
+  ${props => props.sm && css``};
 
-  ${props => props.success && css`
-  
-  `};
+  ${props => props.lg && css``};
 
-  ${props => props.error && css`
-  
-  `};
+  ${props =>
+    props.action &&
+    css`
+      padding-left: 0;
+      padding-right: 0;
 
-  ${props => props.link && css`
-    background: transparent;
-    border-color: transparent;
-    &:focus,
-    &:hover,
-    &:active,
-    &.active {
+      ${props => props.sm && css``};
 
-    }
-  `};
-
-  ${props => props.sm && css`
-  
-  `};
-
-  ${props => props.lg && css`
-  
-  `};
-
-  ${props => props.action && css`
-
-    padding-left: 0;
-    padding-right: 0;
-
-    ${props => props.sm && css`
-  
+      ${props => props.lg && css``};
     `};
 
-    ${props => props.lg && css`
-    
+  ${props =>
+    props.clear &&
+    css`
+      background: transparent;
+      border: 0;
+      color: currentColor;
+      margin-right: -2px;
+      opacity: 1;
+      padding: 0;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.95;
+      }
+
+      &::before {
+      }
     `};
-  
-  `};
-
-  ${props => props.clear && css`
-    background: transparent;
-    border: 0;
-    color: currentColor;
-    margin-right: -2px;
-    opacity: 1;
-    padding: 0;
-    text-decoration: none;
-
-
-    &:hover {
-      opacity: .95;
-    }
-
-    &::before {
-      content: "\2715";
-    }
-  `};
-
 `
 
 export default Button

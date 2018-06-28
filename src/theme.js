@@ -1,4 +1,5 @@
 import { css } from 'styled-system'
+import { includes, get, omit } from 'lodash'
 
 const core = {
   primary: '#5755d9',
@@ -6,7 +7,7 @@ const core = {
   primaryLight: '#6362dc',
   secondary: '#f1f1fc',
   secondaryDark: '#e5e5f9',
-  secondaryLight: '#fefeff',
+  secondaryLight: '#fefeff'
 }
 
 const gray = {
@@ -19,13 +20,13 @@ const gray = {
   borderDark: '#caced7',
   bg: '#f8f9fa',
   bgDark: '#f0f1f4',
-  bgLight: '#fff',
+  bgLight: '#fff'
 }
 
 const control = {
   success: '#32b643',
   warning: '#ffb700',
-  error: '#e85600',
+  error: '#e85600'
 }
 
 const other = {
@@ -35,17 +36,32 @@ const other = {
   bodyFont: '#50596c',
   link: `${core.primary}`,
   linkDark: '#302ecd',
-  linkLight: '#807fe2',
+  linkLight: '#807fe2'
 }
 
 export const colors = {
   ...core,
   ...gray,
   ...control,
-  ...other,
+  ...other
 }
 
-export const unit = [.05, .1, .2, .4, .6, .8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.4, 3.2]
+export const unit = [
+  0.05,
+  0.1,
+  0.2,
+  0.4,
+  0.6,
+  0.8,
+  1,
+  1.2,
+  1.4,
+  1.6,
+  1.8,
+  2,
+  2.4,
+  3.2
+]
 
 const addAliases = (arr, aliases) =>
   aliases.forEach((key, i) =>
@@ -70,11 +86,13 @@ export const sizes = {
   borderRadius: unit[1],
   borderWidth: unit[0],
   borderWidthLg: unit[1],
-  unit,
+  unit
 }
 
-export const fontBase = '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto !default'
-export const fontMono = '"SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace !default'
+export const fontBase =
+  '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto !default'
+export const fontMono =
+  '"SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace !default'
 export const fontFallback = '"Helvetica Neue", sans-serif !default'
 export const bodyFont = `${fontBase}, ${fontFallback} !defaultå`
 
@@ -84,7 +102,7 @@ const theme = {
   fontFallback,
   fontBody,
   colors,
-  sizes,
+  sizes
 }
 
 export default theme
