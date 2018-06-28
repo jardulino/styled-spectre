@@ -1,8 +1,8 @@
 {
   "name": "styled-spectre",
-  "version": "0.0.3-1",
+  "version": "0.0.3-2",
   "description": "Styled Spectre components for React",
-  "main": "disc/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src -d dist --ignore __tests__ && yarn run fmt",
     "dev": "start-storybook -p 9000 -c .storybook",
