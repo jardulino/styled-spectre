@@ -94,7 +94,7 @@ export const fontBase =
 export const fontMono =
   '"SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace !default'
 export const fontFallback = '"Helvetica Neue", sans-serif !default'
-export const bodyFont = `${fontBase}, ${fontFallback} !defaultå`
+export const fontBody = `${fontBase}, ${fontFallback} !default`
 
 const theme = {
   fontBase,

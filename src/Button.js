@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import theme from './theme'
 
 const Button = styled.button`
@@ -31,6 +31,17 @@ const Button = styled.button`
   ${props =>
     props.primary &&
     css`
+      background: ${props => props.theme.colors.primary};
+      border-color: ${props => props.theme.colors.primaryDark};
+      color: ${props => props.theme.colors.light};
+
+      &:focus,
+      &:hover {
+        background: darken(${props => props.theme.colors.primaryDark}, 2%);
+        border-color: darken(${props => props.theme.colors.primaryDark}, 5%);
+        color: ${props => props.theme.colors.light};
+      }
+
       ${props =>
         props.loading &&
         css`

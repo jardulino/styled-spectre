@@ -52,7 +52,7 @@ injectGlobal`
 `
 
 const ThemeProvider = ({ theme, ...props }) => {
-  if (webfonts) injectGlobal([], fontsCss)
+  if (true) injectGlobal([], fontsCss)
   return (
     <Root
       theme={theme}
