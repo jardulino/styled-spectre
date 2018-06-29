@@ -1,6 +1,6 @@
 {
   "name": "styled-spectre",
-  "version": "0.0.3-2",
+  "version": "0.0.3-4",
   "description": "Styled Spectre components for React",
   "main": "dist/index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/jardulino/styled-spectre#readme",
   "dependencies": {
     "lodash": "^4.17.10",
+    "polished": "^1.9.3",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -37,6 +38,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.2.0",
+    "babel-plugin-polished": "^1.1.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

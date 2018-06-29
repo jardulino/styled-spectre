@@ -30,8 +30,8 @@ const control = {
 }
 
 const other = {
-  code: '#d73e48 ',
-  highlight: '#ffe9b3 ',
+  code: '#d73e48',
+  highlight: '#ffe9b3',
   bodyBg: `${gray.bgLight}`,
   bodyFont: '#50596c',
   link: `${core.primary}`,

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import theme from './theme'
+import { darken } from 'polished'
 
 const Button = styled.button`
   appearance: none;
@@ -27,6 +27,18 @@ const Button = styled.button`
     background: ${props => props.theme.colors.secondary};
     border-color: ${props => props.theme.colors.primaryDark};
   }
+  &:active,
+  &.active {
+    background: ${props => props.theme.colors.primaryDark};
+    border-color: ${props => darken(0.5, props.theme.colors.primaryDark)};
+    color: ${props => props.theme.colors.light};
+    text-decoration: none;
+    &.loading {
+      &::after {
+        border-bottom-color: ${props => props.theme.colors.light};
+        border-left-color: ${props => props.theme.colors.light};
+      }
+    }
 
   ${props =>
     props.primary &&
@@ -37,8 +49,14 @@ const Button = styled.button`
 
       &:focus,
       &:hover {
-        background: darken(${props => props.theme.colors.primaryDark}, 2%);
-        border-color: darken(${props => props.theme.colors.primaryDark}, 5%);
+        background: ${props => darken(0.2, props.theme.colors.primaryDark)};
+        border-color: ${props => darken(0.5, props.theme.colors.primaryDark)};
+        color: ${props => props.theme.colors.light};
+      }
+      &:active,
+      &.active {
+        background: ${props => darken(0.4, props.theme.colors.primaryDark)};
+        border-color: ${props => darken(0.7, props.theme.colors.primaryDark)};
         color: ${props => props.theme.colors.light};
       }
 
@@ -46,6 +64,8 @@ const Button = styled.button`
         props.loading &&
         css`
           &::after {
+            border-bottom-color: ${props => props.theme.colors.light};
+            border-left-color: ${props => props.theme.colors.light};
           }
         `};
     `};
@@ -63,12 +83,20 @@ const Button = styled.button`
       &:hover,
       &:active,
       &.active {
+        color: ${props => props.theme.colors.linkDark};
       }
     `};
 
   ${props => props.sm && css``};
 
   ${props => props.lg && css``};
+
+  ${props =>
+    props.block &&
+    css`
+      display: block;
+      width: 100%;
+    `};
 
   ${props =>
     props.action &&

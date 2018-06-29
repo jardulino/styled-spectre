@@ -36,3 +36,8 @@ The core goal is to transform _A Lightweight, Responsive and Modern CSS Framewor
 
 ## Dev notes
 https://medium.com/styled-components/getting-sassy-with-sass-styled-theme-9a375cfb78e8
+
+https://github.com/styled-components/polished
+https://polished.js.org/docs/#installation
+
+ {/*background: ${props => darken(0.2, props.theme.colors.primaryDark)};*/}
