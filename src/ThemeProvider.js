@@ -14,16 +14,16 @@ injectGlobal`
 
   html {
     box-sizing: border-box;
-    font-size: $html-font-size;
-    line-height: $html-line-height;
+    font-size: ${theme.sizes.font.fontHtml};
+    line-height: ${theme.sizes.font.lineHeightHtml};
     -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    background: $body-bg;
+    background: ${theme.colors.bodyBg};
     color: ${theme.colors.bodyFont};
     font-family: ${theme.bodyFont};
-    font-size: $font-size;
+    font-size: ${theme.sizes.font.font}
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
   }
@@ -34,7 +34,7 @@ injectGlobal`
     text-decoration: none;
 
     &:focus {
-      @include control-shadow();
+      
     }
 
     &:focus,

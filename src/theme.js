@@ -1,6 +1,3 @@
-import { css } from 'styled-system'
-import { includes, get, omit } from 'lodash'
-
 const core = {
   primary: '#5755d9',
   primaryDark: '#4b48d6',
@@ -43,7 +40,9 @@ export const colors = {
   ...core,
   ...gray,
   ...control,
-  ...other
+  ...other,
+  transition: 'transition: all .2s ease',
+  shadow: '0 0 0 .1rem rgba($color, .2)'
 }
 
 export const unit = [
@@ -82,19 +81,38 @@ export const breakpoints = [480, 600, 840, 960, 1280, 1440]
 const constrolWidthAliases = ['xs', 'sm', 'md', 'lg', 'xl']
 export const constrolWidth = [180, 320, 640, 960, 1280]
 
+const font = {
+  fontHtml: '20px',
+  lineHeightHtml: '1.5',
+  font: '.8rem',
+  fontSm: '.7rem',
+  fontLg: '.9rem',
+  lineHeight: '1rem'
+}
+
 export const sizes = {
+  unit,
+  font,
+
   borderRadius: unit[1],
   borderWidth: unit[0],
   borderWidthLg: unit[1],
-  unit
+
+  controlSize: unit[9],
+  controlSizeSm: unit[7],
+  controlSizeLg: unit[10],
+
+  controlPaddingX: unit[9],
+
+  controlPaddingY: (unit[9] - 1) / 2 - unit[0]
 }
 
 export const fontBase =
-  '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto !default'
+  '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto'
 export const fontMono =
-  '"SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace !default'
-export const fontFallback = '"Helvetica Neue", sans-serif !default'
-export const fontBody = `${fontBase}, ${fontFallback} !default`
+  '"SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace'
+export const fontFallback = '"Helvetica Neue", sans-serif'
+export const fontBody = `${fontBase}, ${fontFallback}`
 
 const theme = {
   fontBase,

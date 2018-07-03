@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/jardulino/styled-spectre#readme",
   "dependencies": {
-    "lodash": "^4.17.10",
     "polished": "^1.9.3",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",

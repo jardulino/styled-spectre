@@ -2,7 +2,7 @@ node_modules
 npm-debug.log
 
 logo
-
-.DS_Store
-
 dist
+
+.site
+.DS_Store
