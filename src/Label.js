@@ -1,27 +1,20 @@
 import styled, { css } from 'styled-components'
-import theme from './theme'
-
-// Label base style
-const labelBase = () => css`
-  border-radius: $border-radius;
-  line-height: 1.2;
-  padding: 0.1rem 0.15rem;
-`
-
-const labelVariant = (color, bgColor) => css`
-  background: ${bgColor};
-  color: ${color};
-`
+import { lighten } from 'polished'
+import {labelBase, labelVariant} from './utilities/label'
 
 const Label = styled.div`
-  line-height: 1.2;
-  padding: 0.1rem 0.15rem;
+  ${props => labelBase(
+    props.theme.sizes.borderRadius
+  )} 
+  
   display: inline-block;
 
-  ${labelVarian(
-    `${props => props.colors.bodyFont}`,
-    `${props => props.colors.dark}`
-  )} ${props =>
+  ${props => labelVariant(
+    props.theme.colors.dark,
+    lighten(0.05, props.theme.colors.bodyFont)
+  )} 
+  
+  ${props =>
     props.rounded &&
     css`
       border-radius: 5 rem;
@@ -32,45 +25,45 @@ const Label = styled.div`
   ${props =>
     props.primary &&
     css`
-      ${labelVarian(
-        `${props => props.colors.light}`,
-        `${props => props.colors.primary}`
+      ${props => labelVariant(
+        props.theme.colors.light, 
+        props.theme.colors.primary
       )};
     `};
 
   ${props =>
     props.secondary &&
     css`
-      ${labelVarian(
-        `${props => props.colors.primary}`,
-        `${props => props.colors.secondary}`
+      ${props => labelVariant(
+        props.theme.colors.primary,
+        props.theme.colors.secondary
       )};
     `};
 
   ${props =>
     props.success &&
     css`
-      ${labelVarian(
-        `${props => props.colors.light}`,
-        `${props => props.colors.success}`
+      ${props => labelVariant(
+        props.theme.colors.light,
+        props.theme.colors.success
       )};
     `};
 
   ${props =>
     props.warning &&
     css`
-      ${labelVarian(
-        `${props => props.colors.light}`,
-        `${props => props.colors.warning}`
+      ${props => labelVariant(
+        props.theme.colors.light,
+        props.theme.colors.warning
       )};
     `};
 
   ${props =>
     props.error &&
     css`
-      ${labelVarian(
-        `${props => props.colors.light}`,
-        `${props => props.colors.error}`
+      ${props => labelVariant(
+        props.theme.colors.light,
+        props.theme.colors.error
       )};
     `};
 `
