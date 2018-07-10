@@ -11,7 +11,7 @@ npm i styled-spectre
 ```
 
 ## Goal
-The core goal is to transform _A Lightweight, Responsive and Modern CSS Framework_ [Spectre.css](https://picturepan2.github.io/spectre/) into [styled-Components](https://www.styled-components.com/) for React
+The core goal is to transform _A Lightweight, Responsive and Modern CSS Framework_ [Spectre.css](https://picturepan2.github.io/spectre/) into [Styled-Components](https://www.styled-components.com/) for React
 
 ## Documentation
 
