@@ -10,16 +10,16 @@ const Label = styled.div`
   display: inline-block;
 
   ${props => labelVariant(
-    props.theme.colors.dark,
-    lighten(0.05, props.theme.colors.bodyFont)
+    lighten(0.05, props.theme.colors.bodyFont),
+    props.theme.colors.bgDark,
   )} 
   
   ${props =>
     props.rounded &&
     css`
-      border-radius: 5 rem;
-      padding-left: 0.4 rem;
-      padding-right: 0.4 rem;
+      border-radius: 5rem;
+      padding-left: 0.4rem;
+      padding-right: 0.4rem;
     `};
 
   ${props =>

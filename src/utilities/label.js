@@ -1,6 +1,8 @@
+import { css } from 'styled-components'
+
 // Label base style
 export function labelVariant(color, bgColor) {
-  return `
+  return css`
     background: ${bgColor};
     color: ${color};
   `
@@ -8,7 +10,7 @@ export function labelVariant(color, bgColor) {
 
 // Label base style
 export function labelBase(borderRadius) {
-  return `
+  return css`
     border-radius: ${borderRadius};
     line-height: 1.2;
     padding: 0.1rem 0.15rem;

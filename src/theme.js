@@ -1,3 +1,5 @@
+import { lighten, darken } from 'polished'
+
 const core = {
   primary: '#5755d9',
   primaryDark: '#4b48d6',
