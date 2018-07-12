@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { lighten } from 'polished'
-import {labelBase, labelVariant} from './utilities/label'
+import {labelBase, labelVariant} from './mixins/label'
 
 const Label = styled.div`
   ${props => labelBase(
