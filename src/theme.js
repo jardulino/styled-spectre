@@ -105,8 +105,12 @@ export const sizes = {
   controlSizeLg: unit[10],
 
   controlPaddingX: unit[9],
+  controlPaddingXSm: unit[2] * .75,
+  controlPaddingXLg: unit[2] * 1.5,
 
-  controlPaddingY: (unit[9] - 1) / 2 - unit[0]
+  controlPaddingY: (unit[9] - 1) / 2 - unit[0],
+  controlPaddingYSm: (unit[7] - 1) / 2 - unit[0],
+  controlPaddingYLg: (unit[10] - 1) / 2 - unit[0],
 }
 
 export const fontBase =

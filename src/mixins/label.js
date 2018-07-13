@@ -11,7 +11,7 @@ export function labelVariant(color, bgColor) {
 // Label base style
 export function labelBase(borderRadius) {
   return css`
-    border-radius: ${borderRadius};
+    border-radius: ${borderRadius}rem;
     line-height: 1.2;
     padding: 0.1rem 0.15rem;
   `

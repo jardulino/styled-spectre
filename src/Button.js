@@ -5,21 +5,21 @@ const Button = styled.button`
   transition: ${props => props.theme.colors.transitions};
   appearance: none;
   background: ${props => props.theme.colors.bgLight};
-  border: ${props => props.theme.sizes.borderWidth} solid
+  border: ${props => props.theme.sizes.borderWidth}rem solid
     ${props => props.theme.colors.primary};
-  border-radius: ${props => props.theme.sizes.borderRadius};
+  border-radius: ${props => props.theme.sizes.borderRadius}rem;
   color: ${props => props.theme.colors.primary};
   cursor: pointer;
 
   font-size: ${props => props.theme.sizes.font.font};
-  height: ${props => props.theme.sizes.controlSize};
+  height: ${props => props.theme.sizes.controlSize}rem;
   line-height: ${props => props.theme.sizes.font.lineHeight};
 
   display: inline-block;
   outline: none;
 
-  padding: ${props => props.theme.sizes.controlPaddingY}
-    ${props => props.theme.sizes.controlPaddingX};
+  padding: ${props => props.theme.sizes.controlPaddingY}rem
+    ${props => props.theme.sizes.controlPaddingX}rem;
 
   text-align: center;
   text-decoration: none;
@@ -141,12 +141,16 @@ const Button = styled.button`
 
   ${props => props.sm && css`
     font-size: ${props => props.theme.sizes.font.fontSm};
-    height: ${props => props.theme.sizes.controlSizeSm};
+    height: ${props => props.theme.sizes.controlSizeSm}rem;
+    padding: ${props => props.theme.sizes.controlPaddingYSm}rem
+    ${props => props.theme.sizes.controlPaddingXSm}rem;
   `};
 
   ${props => props.lg && css`
     font-size: ${props => props.theme.sizes.font.fontLg};
-    height: ${props => props.theme.sizes.controlSizeLg};
+    height: ${props => props.theme.sizes.controlSizeLg}rem;
+    padding: ${props => props.theme.sizes.controlPaddingYLg}rem
+    ${props => props.theme.sizes.controlPaddingXLg}rem;
   `};
 
   ${props =>
@@ -173,14 +177,14 @@ const Button = styled.button`
       background: transparent;
       border: 0;
       color: currentColor;
-      height: ${props => props.theme.sizes.unit[4]};
-      line-height: ${props => props.theme.sizes.unit[4]};
-      margin-left: ${props => props.theme.sizes.unit[1]};
+      height: ${props => props.theme.sizes.unit[4]}rem;
+      line-height: ${props => props.theme.sizes.unit[4]}rem;
+      margin-left: ${props => props.theme.sizes.unit[1]}rem;
       margin-right: -2px;
       opacity: 1;
       padding: 0;
       text-decoration: none;
-      width: ${props => props.theme.sizes.unit[4]};
+      width: ${props => props.theme.sizes.unit[4]}rem;
 
       &:hover {
         opacity: 0.95;
