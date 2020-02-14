@@ -10,8 +10,7 @@
     "start": "serve .site -p 9000",
     "fmt": "prettier {.storybook,scripts,src,dist}/**/*.js --single-quote --no-semi --write",
     "coverage": "jest --coverage && serve coverage -o",
-    "test": "jest",
-    "storybook": "start-storybook"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,16 +23,30 @@
   },
   "homepage": "https://github.com/jardulino/styled-spectre#readme",
   "dependencies": {
-    "polished": "^3.4.4",
+    "polished": "^1.9.3",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "storybook": "^5.3.13",
-    "styled-components": "^5.0.1"
+    "serve": "^9.6.0",
+    "styled-components": "^3.4.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@storybook/react": "^5.3.13",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-polished": "^1.1.0"
+    "@storybook/addon-info": "^3.4.12",
+    "@storybook/react": "^3.4.12",
+    "@storybook/storybook-deployer": "^2.8.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-polished": "^1.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^23.6.0",
+    "jest-styled-components": "^5.0.1",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
+    "spectre.css": "^0.5.8"
   }
 }

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
 const Button = styled.button`
-  transition: ${props => props.theme.colors.transitions};
+  transition: ${props => props.theme.colors.transition};
   appearance: none;
   background: ${props => props.theme.colors.bgLight};
   border: ${props => props.theme.sizes.borderWidth}rem solid
@@ -46,8 +46,8 @@ const Button = styled.button`
 
   &[disabled],&: disabled,
     ${props =>
-      props.disabled &&
-      css`
+    props.disabled &&
+    css`
         cursor: default;
         opacity: 0.5;
         pointer-events: none;
