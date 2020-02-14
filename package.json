@@ -24,29 +24,29 @@
   "homepage": "https://github.com/jardulino/styled-spectre#readme",
   "dependencies": {
     "polished": "^1.9.3",
-    "prop-types": "^15.6.1",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "serve": "^9.1.0",
-    "styled-components": "^3.3.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "serve": "^9.6.0",
+    "styled-components": "^3.4.10"
   },
   "devDependencies": {
-    "@storybook/addon-info": "^3.4.8",
-    "@storybook/react": "^3.4.8",
-    "@storybook/storybook-deployer": "^2.3.0",
+    "@storybook/addon-info": "^3.4.12",
+    "@storybook/react": "^3.4.12",
+    "@storybook/storybook-deployer": "^2.8.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-jest": "^23.2.0",
+    "babel-jest": "^23.6.0",
     "babel-plugin-polished": "^1.1.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^23.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^23.6.0",
     "jest-styled-components": "^5.0.1",
-    "prettier": "^1.13.6",
-    "react-test-renderer": "^16.4.1",
-    "spectre.css": "^0.5.2"
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
+    "spectre.css": "^0.5.8"
   }
 }
